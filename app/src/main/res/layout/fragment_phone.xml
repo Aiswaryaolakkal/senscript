@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.moive.view.product.phone.PhoneViewModel" />
+        <variable
+            name="adapter1"
+            type="com.example.moive.view.product.phone.adapter.PhoneListAdapter" />
+        <variable
+            name="adapter2"
+            type="com.example.moive.view.product.phone.adapter.TendingAdapter" />
+    </data>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"><androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.product.phone.PhoneFragment">
+    <SearchView
+        android:id="@+id/searchvw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchvw"
+       />
+
+<TextView
+    android:id="@+id/tvTrending"
+    android:text="Trending"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:padding="16dp"
+    android:layout_marginStart="16dp"
+    android:letterSpacing=".23"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/viewPager"
+    />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTrendingList"
+        setAdapter="@{adapter1}"
+        submitList="@{viewModel.productList}"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:background="#6E7A87"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTrending"
+        tools:listitem="@layout/item_phone_list" />
+
+    <TextView
+        android:id="@+id/tvTrailer"
+        android:text="Trailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:letterSpacing=".23"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvTrendingList"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTrailerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:background="#E1222743"
+        setAdapter="@{adapter2}"
+        submitList="@{viewModel.productList}"
+        android:textSize="20sp"
+        tools:listitem="@layout/item_trailer"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTrailer" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

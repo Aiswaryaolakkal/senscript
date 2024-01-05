@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="img_width">100dp</dimen>
+    <dimen name="img_height">60dp</dimen>
+    <dimen name="icon_size">30dp</dimen>
+    <dimen name="icon_size_big">100dp</dimen>
+    <dimen name="title_height">60dp</dimen>
+</resources>
