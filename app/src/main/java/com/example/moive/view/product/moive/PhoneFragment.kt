@@ -1,4 +1,4 @@
-package com.example.moive.view.product.phone
+package com.example.moive.view.product.moive
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -11,9 +11,9 @@ import com.example.moive.R
 import com.example.moive.base.BaseFragment
 import com.example.moive.databinding.FragmentPhoneBinding
 import com.example.moive.view.model.Product
-import com.example.moive.view.product.phone.adapter.ImageAdapter
-import com.example.moive.view.product.phone.adapter.TrendAdapter
-import com.example.moive.view.product.phone.adapter.TrailerAdapter
+import com.example.moive.view.product.moive.adapter.ImageAdapter
+import com.example.moive.view.product.moive.adapter.TrendAdapter
+import com.example.moive.view.product.moive.adapter.TrailerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Timer
 import java.util.TimerTask
@@ -27,7 +27,7 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
     lateinit var viewPagerAdapter: ImageAdapter
     var currentPage:Int = 0;
     lateinit var timer:Timer;
-    val  DELAY_MS:Long = 500;//delay in milliseconds before task is to be executed
+    val  DELAY_MS:Long = 500;
     val  PERIOD_MS :Long= 3000
     private val trendAdapter: TrendAdapter by lazy {
         TrendAdapter(requireContext(),pdtList,this)
@@ -40,8 +40,6 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vm.fetchAlbumList()
-//        vm.fetchMoiveList()
-//        vm.fetchProductList()
 
 
     }
@@ -62,7 +60,8 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
         // on below line we are setting
         // adapter to our view pager.
         binding.viewPager.adapter = viewPagerAdapter
-        binding.adapter1 = trendAdapter
+//        binding.adapter1 = trendAdapter
+        binding.adapter2 = trailerAdapter
 
         rotateSlider()
 
@@ -80,13 +79,13 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
                         it.title.lowercase().contains(newText.lowercase())
 
                     })
-                    trailerAdapter.notifyDataSetChanged()
+                    trendAdapter.notifyDataSetChanged()
                 }
                 return false
             }
 
         })
-        binding.rvTrailerList.adapter = trailerAdapter
+        binding.rvTrendingList.adapter = trendAdapter
 
     }
 

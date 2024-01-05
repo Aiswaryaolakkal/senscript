@@ -8,7 +8,7 @@
             type="com.example.moive.view.model.Product" />
         <variable
             name="callBack"
-            type="com.example.moive.view.product.phone.adapter.TrailerAdapter.ItemClickListener" />
+            type="com.example.moive.view.product.moive.adapter.TrailerAdapter.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

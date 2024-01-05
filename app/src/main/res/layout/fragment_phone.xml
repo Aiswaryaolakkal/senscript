@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.moive.view.product.phone.PhoneViewModel" />
+            type="com.example.moive.view.product.moive.PhoneViewModel" />
         <variable
             name="adapter1"
-            type="com.example.moive.view.product.phone.adapter.TrendAdapter" />
-<!--        <variable-->
-<!--            name="adapter2"-->
-<!--            type="com.example.moive.view.product.phone.adapter.TrailerAdapter" />-->
+            type="com.example.moive.view.product.moive.adapter.TrendAdapter" />
+        <variable
+            name="adapter2"
+            type="com.example.moive.view.product.moive.adapter.TrailerAdapter" />
     </data>
 
 <ScrollView
@@ -19,13 +19,16 @@
     android:layout_height="match_parent"><androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.product.phone.PhoneFragment">
+    tools:context=".view.product.moive.PhoneFragment">
     <SearchView
         android:id="@+id/searchvw"
         android:layout_width="0dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:queryBackground="@null"
+        android:queryHint="Search"
+        android:iconifiedByDefault="true"
         android:background="@drawable/search_box_bg"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,12 +58,13 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/viewPager"
     />
+<!--    setAdapter="@{adapter1}"-->
+<!--    submitList="@{viewModel.productList}"-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTrendingList"
-        setAdapter="@{adapter1}"
-        submitList="@{viewModel.productList}"
+
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:orientation="horizontal"
         android:textAlignment="center"
@@ -93,6 +97,8 @@
         android:textAlignment="center"
         android:background="#3E222743"
         android:textSize="20sp"
+        setAdapter="@{adapter2}"
+        submitList="@{viewModel.productList}"
         tools:listitem="@layout/item_trailer"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"

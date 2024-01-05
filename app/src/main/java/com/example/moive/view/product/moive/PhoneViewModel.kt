@@ -1,4 +1,4 @@
-package com.example.moive.view.product.phone
+package com.example.moive.view.product.moive
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

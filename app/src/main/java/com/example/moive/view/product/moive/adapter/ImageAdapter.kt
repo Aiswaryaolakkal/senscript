@@ -1,4 +1,4 @@
-package com.example.moive.view.product.phone.adapter
+package com.example.moive.view.product.moive.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
