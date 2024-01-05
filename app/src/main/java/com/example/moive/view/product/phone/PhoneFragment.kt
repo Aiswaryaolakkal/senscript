@@ -3,6 +3,7 @@ package com.example.moive.view.product.phone
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.SearchView
 import androidx.fragment.app.viewModels
 import com.example.moive.BR
@@ -41,8 +42,13 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
         vm.fetchAlbumList()
 //        vm.fetchMoiveList()
 //        vm.fetchProductList()
-        setupObservers()
 
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupObservers()
     }
     override fun getBindingVariable() = BR.viewModel
     override fun getViewmodel(): PhoneViewModel = vm
@@ -57,7 +63,7 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
         // adapter to our view pager.
         binding.viewPager.adapter = viewPagerAdapter
         binding.adapter1 = trendAdapter
-      binding.rvTrailerList.adapter = trailerAdapter
+
         rotateSlider()
 
         binding.searchvw.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -80,6 +86,7 @@ class PhoneFragment : BaseFragment<FragmentPhoneBinding, PhoneViewModel>(),
             }
 
         })
+        binding.rvTrailerList.adapter = trailerAdapter
 
     }
 
