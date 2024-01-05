@@ -7,8 +7,6 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.moive.view.FirstFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -18,7 +16,6 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.moive.view.SecondFragment"
-        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
         <action
@@ -27,14 +24,13 @@
     </fragment>
     <fragment
         android:id="@+id/addNewBookFragment"
-        android:name="com.example.moive.view.AddNewBookFragment"
         android:label="AddNewBookFragment"
-        tools:layout="@layout/fragment_add_new_book"/>
+        />
     <fragment
         android:id="@+id/bookListFragment"
         android:name="com.example.moive.view.list.view.BookListFragment"
         android:label="BookListFragment"
-        tools:layout="@layout/fragment_book_list">
+        >
         <action
             android:id="@+id/action_bookListFragment_to_addNewBookFragment"
             app:destination="@id/addNewBookFragment" />

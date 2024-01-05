@@ -8,20 +8,19 @@
             type="com.example.moive.view.model.Product" />
         <variable
             name="callBack"
-            type="com.example.moive.view.product.phone.adapter.PhoneListAdapter.ItemClickListener" />
+            type="com.example.moive.view.product.phone.adapter.TrendAdapter.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="8dp"
         android:background="#3BB8B6B6">
         >
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:onClick="@{()->callBack.onItemclicked(model)}"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +29,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:background="#486E7A87"
                 android:layout_height="match_parent">
                 <ImageView
                     android:id="@+id/ivMovie"
@@ -48,6 +48,7 @@
                     android:layout_marginTop="4dp"
                     android:text="@{model.title}"
                     android:textAllCaps="true"
+                    android:padding="8dp"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold"

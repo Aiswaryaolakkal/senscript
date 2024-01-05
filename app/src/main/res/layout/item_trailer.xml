@@ -8,7 +8,7 @@
             type="com.example.moive.view.model.Product" />
         <variable
             name="callBack"
-            type="com.example.moive.view.product.phone.adapter.TendingAdapter.ItemClickListener" />
+            type="com.example.moive.view.product.phone.adapter.TrailerAdapter.ItemClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,7 +31,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:background="#E1222743"
+                android:background="#3E222743"
                 android:layout_height="match_parent">
                         <ImageView
                             android:id="@+id/ivMovie"

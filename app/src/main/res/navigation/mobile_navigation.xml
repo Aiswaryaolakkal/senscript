@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_product"
         android:name="com.example.moive.view.product.phone.PhoneFragment"
-        android:label="@string/title_product"
+        android:label="@string/title_moive"
         tools:layout="@layout/fragment_phone" />
 
     <fragment

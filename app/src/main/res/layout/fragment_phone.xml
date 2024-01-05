@@ -8,10 +8,10 @@
             type="com.example.moive.view.product.phone.PhoneViewModel" />
         <variable
             name="adapter1"
-            type="com.example.moive.view.product.phone.adapter.PhoneListAdapter" />
-        <variable
-            name="adapter2"
-            type="com.example.moive.view.product.phone.adapter.TendingAdapter" />
+            type="com.example.moive.view.product.phone.adapter.TrendAdapter" />
+<!--        <variable-->
+<!--            name="adapter2"-->
+<!--            type="com.example.moive.view.product.phone.adapter.TrailerAdapter" />-->
     </data>
 
 <ScrollView
@@ -23,6 +23,10 @@
     <SearchView
         android:id="@+id/searchvw"
         android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/search_box_bg"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +36,7 @@
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchvw"
@@ -56,13 +61,11 @@
         submitList="@{viewModel.productList}"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:padding="16dp"
         android:orientation="horizontal"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:background="#6E7A87"
+        android:background="#486E7A87"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,13 +89,9 @@
         android:id="@+id/rvTrailerList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="12dp"
         android:textAlignment="center"
-        android:background="#E1222743"
-        setAdapter="@{adapter2}"
-        submitList="@{viewModel.productList}"
+        android:background="#3E222743"
         android:textSize="20sp"
         tools:listitem="@layout/item_trailer"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
